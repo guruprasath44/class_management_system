@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> CMS | Signup Page</title>
+  <link rel="shortcut icon"
+    href="https://images.static-collegedunia.com/public/college_data/images/logos/1457341593AAEAAQAAAAAAAAYZAAAAJGY5ZjY0MDU2LTU2MzktNDRjNC1iMjZkLWRmNDg4YmE1NDM0Mw.png"
+    sizes="320x320" type="image/x-icon">
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/public/css/adminlte.min.css">
+  <style>
+    body {
+      background-image: url("../img/background.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .check {
+      margin-top: 10px;
+      font-size: 15px;
+      color: darkslategray;
+      font-weight: bold;
+      font-family: sans-serif;
+
+    }
+
+    .Checkbox {
+      text-align: left;
+      margin-left: 5px;
+      margin-bottom: 9px;
+
+    }
+  </style>
+  <script>
+    function checkPassword(form) {
+
+      pwd1 = form.password1.value;
+
+      pwd2 = form.password2.value;
+
+
+      if (pwd1 != pwd2) {
+        alert("\nPassword did not matched !! Please try again...");
+        return false;
+      }
+
+
+
+    }
+    function myShow() {
+      var x = document.getElementById("password1");
+      var y = document.getElementById("password2");
+      if ((x.type === "password1") && (y.type === "password2")) {
+        x.type = "text";
+        y.type = "text";
+      } else {
+        x.type = "password1";
+        y.type = "password2";
+      }
+    }
+  </script>
+</head>
+
+<body class="hold-transition register-page">
+  <img src="../img/college_name.png" class="card-header" style="margin-bottom: 20px;">
+  <div class="register-box">
+    <div class="card card-outline card-primary">
+      <div class="card-header text-center">
+        <a href="/views/register.html" class="h1"><b>Signup</b></a>
+      </div>
+      <div class="card-body">
+        <p class="login-box-msg">New User? SignUp to Login</p>
+
+        <form action="/user_signup" class="needs-validation" novalidate method="post"
+          onsubmit="return checkPassword(this);">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-user"></span>
+              </div>
+            </div>
+            <div class="invalid-feedback">
+              Enter your name
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+            <div class="invalid-feedback">
+              Enter a valid email
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="password" class="form-control" id="password1" name="pwd1" placeholder="Password" required>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+            <div class="invalid-feedback">
+              Enter your Password
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="password" class="form-control" id="password2" name="pwd2" placeholder="Confirm password"
+              required>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+            <div class="invalid-feedback">
+              Enter your Confirm Password
+            </div>
+          </div>
+          <div>
+            <p class="check"><input type="checkbox" class=" Checkbox" onclick="myShow()">Show Password</p>
+          </div>
+          <div class="row">
+            <div class="col-8">
+
+            </div>
+            <!-- /.col -->
+            <div class="col-8">
+              <button type="submit" id="submit" class="btn btn-primary btn-block">Register</button>
+            </div>
+            <!-- /.col -->
+          </div>
+        </form>
+
+
+
+        <a href="/Login" class="text-center">Click here to Login</a>
+      </div>
+      <!-- /.form-box -->
+    </div><!-- /.card -->
+  </div>
+  <!-- /.register-box -->
+
+  <!-- jQuery -->
+  <script src="/plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="/dist/js/adminlte.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script>
+    $("#submit").click(function () {
+      var name = $("#name").val();
+      var email = $("#email").val();
+      var password1 = $('#password1').val();
+      var password2 = $('#password2').val();
+      if (name == '' || email == '' || password1 == '' || password2 == '') {
+        swal({
+
+          title: "Try again!",
+          text: 'Fields  are empty',
+          icon: "warning",
+          button: "ok",
+
+        });
+      }
+      else {
+        swal({
+
+          title: "Success!",
+          text: "Successfully Registered",
+          icon: "success",
+          button: "ok",
+
+        });
+      }
+    })
+  </script>
+  <script>
+      (function () {
+        'use strict'
+
+        var forms = document.querySelectorAll('.needs-validation')
+        Array.prototype.slice.call(forms)
+          .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+              }
+              form.classList.add('was-validated')
+            }, false)
+          })
+      })()
+  </script>
+</body>
+
+</html>

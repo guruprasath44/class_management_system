@@ -1,0 +1,1 @@
+insert into ams.faculty values('Ram','K','IT','Assistant Professor','ramk@srishakthi.ac.in','1990-04-14','Male','127 Kinder garden, singanallurfaculty','8247966612','Coimbatore','Tamilnadu','641018');

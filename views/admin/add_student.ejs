@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CMS | Students</title>
+  <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="/plugins/jqvmap/jqvmap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/public/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="/plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="/plugins/summernote/summernote-bs4.min.css">
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+  <div class="wrapper">
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+            <i class="fas fa-expand-arrows-alt" data-bs-toggle="tooltip" data-bs-placement="left"
+              title="Full Screen"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+
+            <i class="fas fa-th-large" data-bs-toggle="tooltip" data-bs-placement="left" title="Dark mode"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+
+
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+
+      <a href="/Login" class="brand-link">
+        <i class="fas fa-arrow-circle-left"></i>
+        <span class="brand-text font-weight-light">Logout</span>
+      </a>
+
+      <div class="sidebar">
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+          <div class="image">
+            <img src="/img/default_profile.png" class="img-circle elevation-2" alt="User Image">
+          </div>
+          <div class="info">
+            <a href="/admin/faculty_profile" class="d-block">
+              <%= userData%>
+            </a>
+          </div>
+        </div>
+
+        <div class="form-inline">
+          <div class="input-group" data-widget="sidebar-search">
+            <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+            <div class="input-group-append">
+              <button class="btn btn-sidebar">
+                <i class="fas fa-search fa-fw"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+            <li class="nav-item ">
+              <a href="/admin/dashboard" class="nav-link ">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                  Dashboard
+                </p>
+              </a>
+
+            <li class="nav-item ">
+              <a href="#" class="nav-link ">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                  Class
+                  <i class="fas fa-angle-left right"></i>
+                  <span class="right badge badge-danger">New</span>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item ">
+                  <a href="#" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>
+                      III IT
+                      <i class="right fas fa-angle-left"></i>
+                    </p>
+                  </a>
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="/admin/class_admin" class="nav-link ">
+                        <i class="far fa-dot-circle nav-icon"></i>
+                        <p>Class Info</p>
+                      </a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a href="/admin/faculty_subject" class="nav-link  ">
+                        <i class="far fa-dot-circle nav-icon"></i>
+                        <p>Subject Info</p>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item ">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-edit"></i>
+                <p>
+                  Edit
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+
+
+                <li class="nav-item">
+                  <a href="/admin/add_subject" class="nav-link ">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Add Subject</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="/admin/faculty_profile" class="nav-link ">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p> Edit My Profile</p>
+                  </a>
+                </li>
+
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-chalkboard-teacher"></i>
+                <p>
+                  Faculty
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="/admin/faculty" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Faculty List</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/admin/add_faculty" class="nav-link ">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Add Faculty</p>
+                  </a>
+                </li>
+
+              </ul>
+            </li>
+            <li class="nav-item menu-open">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-id-card-alt"></i>
+                <p>
+                  Students
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="/admin/students_list" class="nav-link  ">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Students List</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/admin/add_student" class="nav-link active ">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Add Student</p>
+                  </a>
+                </li>
+
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+
+    </aside>
+    <div class="content-wrapper">
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">Add Student</h1>
+            </div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                <li class="breadcrumb-item active">Edit </li>
+                <li class="breadcrumb-item active">Add Student
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="content">
+        <div class="container-fluid">
+          <% if(success!='' ){%>
+            <div class="alert alert-success alert-dismissible col-5">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              <%= success %>
+            </div>
+            <%}%>
+              <div class="col-7">
+
+                <form class="row g-3" action="/add_student" method="POST">
+
+
+                  <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">FirstName</label>
+                    <input type="text" name="fname" class="form-control" id="inputEmail4" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">LastName</label>
+                    <input type="text" name="lname" class="form-control" id="inputPassword4" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">Roll No</label>
+                    <input type="text" name="rollno" class="form-control" id="inputPassword4">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">Register Number</label>
+                    <input type="text" name="regno" class="form-control" id="inputPassword4">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Email</label>
+
+
+                    <input type="email" name="email" class="form-control" id="inputEmail4">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">Date Of Birth</label>
+                    <input type="date" name="dob" class="form-control" id="inputPassword4">
+                  </div>
+                  <div class="col-md-5">
+                    <label for="inputhos_day" class=" col-form-label">Dayscholar/Hostler</label>
+
+                    <select class="form-control select2" id="hos_day" name="hos_day" required style="width: 100%;">
+                      <option value=" ">choose</option>
+                      <option value="Dayscholar">Dayscholar</option>
+                      <option value="Hostler">Hostler</option>
+
+                    </select>
+
+
+                  </div>
+
+                  <div class="col-12">
+                    <label for="inputPassword4" class="form-label">Gender</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gender" value="Male" id="flexRadioDefault1">
+                      <label class="form-check-label" for="flexRadioDefault1">
+                        Male
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gender" value="Female" id="flexRadioDefault2">
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        Female
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-5">
+                    <label for="inputExperience" class=" col-form-label">Batch</label>
+
+
+                    <select class="form-control select2" id="batch" name="batch" required style="width: 100%;">
+                      <option value=" ">choose</option>
+                      <option value="2020-2024">2020-2024</option>
+                      <option value="2019-2023">2019-2023</option>
+                      <option value="2018-2022">2018-2022</option>
+                      <option value="2017-2020">2017-2020</option>
+
+                    </select>
+
+                  </div>
+                  <div class="col-12">
+
+                  </div>
+
+                  <div class="col-7">
+                    <label for="exampleFormControlTextarea1" class="form-label">Address</label>
+                    <textarea class="form-control" name="address" id="exampleFormControlTextarea1" rows="5"></textarea>
+
+                  </div>
+                  <div class="col-12">
+
+                  </div>
+                  <div class="col-5">
+                    <label for="inputPassword4" class="form-label">Mobile Number</label>
+                    <input type="text" name="mobno" class="form-control" id="inputPassword4" placeholder="+91">
+
+                  </div>
+                  <div class="col-9">
+
+                  </div>
+
+                  <div class="col-sm-4">
+                    <label for="inputCity" class="form-label">City</label>
+                    <input type="text" name="city" class="form-control" id="inputCity">
+                  </div>
+                  <div class="col-sm-4">
+                    <label for="inputState" class="form-label">State</label>
+                    <input type="text" name="state" class="form-control" id="inputState" placeholder="Tamilnadu">
+                  </div>
+                  <div class="col-sm-3">
+                    <label for="inputZip" class="form-label">Pincode</label>
+                    <input type="text" name="pincode" class="form-control" id="inputZip">
+                  </div>
+
+                  <div class="col-9">
+                    <br>
+                  </div>
+
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+                </form>
+              </div>
+        </div>
+      </section>
+      <section class="col-lg-5 connectedSortable">
+    </div>
+    </section>
+  </div>
+  </div>
+  </section>
+  <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+
+  <!-- Control Sidebar -->
+  <!-- Control sidebar content goes here -->
+  <aside class="control-sidebar control-sidebar-dark">
+
+  </aside>
+  <!-- /.control-sidebar -->
+  </div>
+  <!-- ./wrapper -->
+
+  <!-- jQuery -->
+  <script src="/plugins/jquery/jquery.min.js"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="/plugins/jquery-ui/jquery-ui.min.js"></script>
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <script>
+    $.widget.bridge('uibutton', $.ui.button)
+  </script>
+  <!-- Bootstrap 4 -->
+  <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- ChartJS -->
+  <script src="/plugins/chart.js/Chart.min.js"></script>
+  <!-- Sparkline -->
+  <script src="/plugins/sparklines/sparkline.js"></script>
+  <!-- JQVMap -->
+  <script src="/plugins/jqvmap/jquery.vmap.min.js"></script>
+  <script src="/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+  <!-- jQuery Knob Chart -->
+  <script src="/plugins/jquery-knob/jquery.knob.min.js"></script>
+  <!-- daterangepicker -->
+  <script src="/plugins/moment/moment.min.js"></script>
+  <script src="/plugins/daterangepicker/daterangepicker.js"></script>
+  <!-- Tempusdominus Bootstrap 4 -->
+  <script src="/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+  <!-- Summernote -->
+  <script src="/plugins/summernote/summernote-bs4.min.js"></script>
+  <!-- overlayScrollbars -->
+  <script src="/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="/dist/js/adminlte.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="/dist/js/demo.js"></script>
+  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+  <script src="/dist/js/pages/dashboard.js"></script>
+</body>
+
+</html>

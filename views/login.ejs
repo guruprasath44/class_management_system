@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CMS - Log in</title>
+  <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/public/css/adminlte.min.css">
+  <script>
+    function myShow() {
+      var x = document.getElementById('pwd');
+
+      var icon = document.getElementById('icon');
+
+
+
+      if (x.type === 'password') {
+        x.setAttribute('type', 'text');
+        icon.className = 'fa fa-eye';
+        x.type = 'text';
+
+      } else {
+        x.setAttribute('type', 'password');
+        icon.className = 'fa fa-eye-slash';
+        x.type = 'password';
+      }
+
+
+    }
+  </script>
+
+  <style>
+    body {
+      background-image: url("../img/background.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+
+</head>
+
+<body class="hold-transition login-page">
+  <img src="../img/college_name.png" class="card-header" style="margin-bottom: 20px;">
+
+  <div class="login-box">
+    <% if(success!='' ){%>
+      <div class="alert alert-danger alert-dismissible col-12" id="success-alert">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <%= success %>
+      </div>
+      <%}%>
+        <div class="card card-outline card-primary">
+          <div class="card-header text-center">
+
+            <a href="/login" class="h1"><b>LogIn</b></a>
+          </div>
+          <div class="card-body">
+            <p class="login-box-msg">Log in to start your session</p>
+
+            <form action="/user/login" method="post">
+              <div class="input-group mb-3">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email*">
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-envelope"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <input type="password" class="form-control" id="pwd" name="password" placeholder="Password*">
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fa fa-eye-slash " id="icon" onclick="myShow()"></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- /.col -->
+              <div class="col-5" style="margin: auto;">
+                <button type="submit" id="submit" class="btn btn-primary btn-block">Log In</button>
+              </div>
+              <!-- /.col -->
+          </div>
+          </form>
+          <p class="mb-6 col-9" style="margin-left: 60px;">
+            <a href="/Register" class="text-center">New User? Click here to Signup</a>
+          </p>
+        </div>
+  </div>
+  </div>
+  <!-- jQuery -->
+  <script src="/plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="/dist/js/adminlte.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script>
+    $("#success-alert").fadeTo(2000, 500).slideUp(500, function () {
+      $("#success-alert").slideUp(500);
+    })
+
+      // $("#submit").click(function () {
+      //   var email = $("#email").val();
+      //   var pwd = $('#pwd').val();
+      //   if (email == '' && pwd == '') {
+      //     swal({
+
+      //       title: "Try again!",
+      //       text: 'Fields  are empty',
+      //       icon: "warning",
+      //       button: "ok",
+
+      //     });
+      //   }
+      //   else if (email == '') {
+      //     swal({
+
+      //       title: "Enter your Email",
+      //       text: "Email field is empty!",
+      //       icon: "warning",
+      //       button: "ok",
+
+      //     });
+      //   }
+      //   else if (pwd == '') {
+      //     swal({
+
+      //       title: "Enter your Password",
+      //       text: "Password field is empty!",
+      //       icon: "warning",
+      //       button: "ok",
+
+      //     });
+      //   }
+      // })
+  </script>
+</body>
+
+</html>

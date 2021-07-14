@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CMS | Faculty</title>
+  <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+  <!-- Google Font: Source Sans Pro -->
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/public/css/adminlte.min.css">
+  <style>
+    #it_prof {
+      height: 65px;
+      width: 70px;
+
+    }
+
+    .students-list {
+      font-family: Arial, Helvetica, sans-serif;
+
+    }
+  </style>
+
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+  <div class="wrapper">
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+
+
+        <!-- <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Contact</a>
+      </li> -->
+      </ul>
+
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+        <!-- Navbar Search -->
+
+
+        <!-- Messages Dropdown Menu -->
+
+        <!-- Notifications Dropdown Menu -->
+
+        <li class="nav-item">
+          <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+            <i class="fas fa-expand-arrows-alt" data-bs-toggle="tooltip" data-bs-placement="left"
+              title="Full Screen"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+
+            <i class="fas fa-th-large" data-bs-toggle="tooltip" data-bs-placement="left" title="Dark mode"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <!-- Brand Logo -->
+      <a href="/Login" class="brand-link">
+        <i class="fas fa-arrow-circle-left"></i>
+        <span class="brand-text font-weight-light">Logout</span>
+      </a>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+          <div class="image">
+            <img src="/img/default_profile.png" class="img-circle elevation-2" alt="User Image">
+          </div>
+          <div class="info">
+            <a href="/admin/faculty_profile" class="d-block">
+              <%= userData%>
+            </a>
+          </div>
+        </div>
+
+        <!-- SidebarSearch Form -->
+        <div class="form-inline">
+          <div class="input-group" data-widget="sidebar-search">
+            <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+            <div class="input-group-append">
+              <button class="btn btn-sidebar">
+                <i class="fas fa-search fa-fw"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+            <li class="nav-item ">
+              <a href="/admin/dashboard" class="nav-link ">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                  Dashboard
+                  <!-- <i class="right fas fa-angle-left"></i> -->
+                </p>
+              </a>
+
+            <li class="nav-item ">
+              <a href="#" class="nav-link ">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                  Class
+                  <i class="fas fa-angle-left right"></i>
+                  <span class="right badge badge-danger">1</span>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item ">
+                  <a href="#" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>
+                      III IT
+                      <i class="right fas fa-angle-left"></i>
+                    </p>
+                  </a>
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="/admin/class_admin" class="nav-link ">
+                        <i class="far fa-dot-circle nav-icon"></i>
+                        <p>Class Info</p>
+                      </a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a href="/admin/faculty_subject" class="nav-link  ">
+                        <i class="far fa-dot-circle nav-icon"></i>
+                        <p>Subject Info</p>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-edit"></i>
+                <p>
+                  Edit
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+
+                <li class="nav-item">
+                  <a href="/admin/add_subject" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Add Subject</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="/admin/faculty_profile" class="nav-link ">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p> Edit My Profile</p>
+                  </a>
+                </li>
+              </ul>
+            <li class="nav-item menu-open">
+              <a href="#" class="nav-link">
+                <i class=" nav-icon fas fa-chalkboard-teacher"></i>
+                <p>
+                  Faculty
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="/admin/faculty" class="nav-link active">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Faculty List</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/admin/add_faculty" class="nav-link ">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Add Faculty</p>
+                  </a>
+                </li>
+
+              </ul>
+            </li>
+            <li class="nav-item ">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-id-card-alt"></i>
+                <p>
+                  Students
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="/admin/students_list" class="nav-link  ">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Students List</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/admin/add_student" class="nav-link  ">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Add Student</p>
+                  </a>
+                </li>
+
+              </ul>
+            </li>
+
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">Faculty</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item">Dashboard</a></li>
+                <li class="breadcrumb-item active">Faculty </li>
+              </ol>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Faculty List</h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+
+            </div>
+          </div>
+          <div class="card-body p-0">
+            <table class="table table-striped projects">
+              <thead>
+                <tr>
+                  <th style="width: 1%">
+                    S.no
+                  </th>
+                  <th style="width: 10%">
+                    Profile
+                  </th>
+                  <th style="width: 10%" class="text-center">
+                    Faculty Name
+                  </th>
+                  <th style="width: 10%" class="text-center">
+                    Department
+                  </th>
+                  <th style="width: 15%" class="text-center">
+                    Email
+                  </th>
+                  <th style="width: 10%" class="text-center">
+                    Mobile
+                  </th>
+                  <th style="width: 20%">
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <% if(facultyData.length!=0){%>
+                  <%var i=1;%>
+
+                    <%facultyData.forEach(function(data){%>
+
+                      <tr data-widget="expandable-table" aria-expanded="false">
+                        <td>
+                          <%=i;%>
+                        </td>
+                        <td>
+                          <ul class="list-inline">
+                            <li class="list-inline-item">
+                              <img alt="Avatar" class="table-avatar" src="../../dist/img/user-128x128.jpg"
+                                alt="User profile picture" onerror=this.src="/img/default_pic.jpg">
+                            </li>
+
+                          </ul>
+                        </td>
+                        <td>
+                          <a>
+                            <%=data.firstname %>
+                              <%=data.lastname %>
+                          </a>
+                          <br />
+                          <small>
+                            <%=data.position %>
+                          </small>
+                        </td>
+
+                        <td class=" text-center">
+
+                          <h6>
+                            <%=data.department %>
+                          </h6>
+                        </td>
+
+                        <td class="text-center">
+                          <h6>
+                            <%=data.email %>
+                          </h6>
+                        </td>
+                        <td class=" text-center">
+
+                          <h6>
+                            <%=data.mobileno %>
+                          </h6>
+                        </td>
+                        <td class="project-actions text-right">
+                          <a class="btn btn-primary btn-sm">
+                            <i class="fas fa-folder">
+                            </i>
+                            View
+                          </a>
+
+                          <a class="btn btn-danger btn-sm" href="/admin/faculty/delete/<%=data.email %>"
+                            onclick="return confirm('Are you want to remove this Faculty?');" <i class="fas fa-trash">
+                            </i>
+                            Delete
+                          </a>
+                        </td>
+                      </tr>
+                      <tr class="expandable-body">
+                        <td colspan="12">
+                          <div class="row invoice-info">
+                            <div class="col-sm-4 invoice-col">
+                              <strong>Personel Details</strong>
+                              <address>
+                                <strong>Address</strong><br>
+                                <%=data.address%><br>
+                                  <%=data.city%><br>
+                                    <%=data.state%><br>
+                                      <%=data.pincode%>
+
+                              </address>
+                            </div>
+                            <div class="col-sm-4 invoice-col">
+                              <% var datemonth=data.dob.getMonth()+1 %>
+                                <br>
+                                <b>Date of Birth :</b>
+                                <%=data.dob.getDate()+"-"+datemonth +"-"+ data.dob.getFullYear()%><br>
+                                  <b>Phone number :</b>
+                                  <%= data.mobileno%>
+                            </div>
+                        </td>
+                      </tr>
+                      <% i++ })%>
+                        <% }%>
+              </tbody>
+            </table>
+          </div>
+          <!-- /.card-body -->
+        </div>
+
+      </section>
+      <section class="col-lg-5 connectedSortable">
+
+    </div>
+    <div class="card-body pt-0">
+      <!--The calendar -->
+      <div id="calendar" style="width: 100%"></div>
+    </div> -->
+    <!-- /.card-body -->
+  </div>
+  <!-- /.card -->
+  </section>
+  <!-- right col -->
+  </div>
+  <!-- /.row (main row) -->
+  </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+
+  <!-- Control Sidebar -->
+  <!-- Control sidebar content goes here -->
+  <aside class="control-sidebar control-sidebar-dark">
+  </aside>
+  <!-- /.control-sidebar -->
+  </div>
+  <!-- ./wrapper -->
+
+  <!-- jQuery -->
+  <script src="../../plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- DataTables  & Plugins -->
+  <script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+  <script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+  <script src="../../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+  <script src="../../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+  <script src="../../plugins/jszip/jszip.min.js"></script>
+  <script src="../../plugins/pdfmake/pdfmake.min.js"></script>
+  <script src="../../plugins/pdfmake/vfs_fonts.js"></script>
+  <script src="../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+  <script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+  <script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="../../dist/js/adminlte.min.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="../../dist/js/demo.js"></script>
+
+
+  <script>
+    $(function () {
+      $("#example1").DataTable({
+        "responsive": false, "lengthChange": true, "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "colvis"]
+
+      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)  ');
+      $('.tootltip-r').tooltip();
+
+    });
+
+  </script>
+</body>
+
+</html>
