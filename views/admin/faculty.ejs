@@ -371,10 +371,11 @@
                               </address>
                             </div>
                             <div class="col-sm-4 invoice-col">
-                              <% var datemonth=data.dob.getMonth()+1 %>
+                              <%  var dt = new Date(data.dob) %>
+                              <% var datemonth = dt.getMonth() %>
                                 <br>
                                 <b>Date of Birth :</b>
-                                <%=data.dob.getDate()+"-"+datemonth +"-"+ data.dob.getFullYear()%><br>
+                                <%=dt.getDate()+"-"+ datemonth +"-"+ dt.getFullYear()%><br>
                                   <b>Phone number :</b>
                                   <%= data.mobileno%>
                             </div>

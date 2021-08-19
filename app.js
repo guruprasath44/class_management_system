@@ -9,6 +9,6 @@ const myRoutes = require('./controller/routes/route');
 app.use(myRoutes);
 app.set('views', [`${__dirname}/views`, `${__dirname}/views/admin`, `${__dirname}/views/student`]);
 app.set('view engine', 'ejs');
-app.listen(1000, () => {
-  console.log('server is running at the port 1000');
+app.listen(3000, () => {
+  console.log('server is running at the port 3000');
 });

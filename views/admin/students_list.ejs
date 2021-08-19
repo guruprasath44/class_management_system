@@ -331,9 +331,10 @@
                         <td>
                           <%=data.Batch%>
                         </td>
-                        <% var datemonth=data.dob.getMonth()+1 %>
+                        <%  var dt = new Date(data.dob) %>
+                        <% var datemonth = dt.getMonth() %>
                           <td>
-                            <%=data.dob.getDate()+" /"+datemonth +"/"+ data.dob.getFullYear()%>
+                            <%=dt.getDate()+" /"+datemonth +"/"+ dt.getFullYear()%>
                           </td>
                           <td>
                             <%=data.hos_day %>

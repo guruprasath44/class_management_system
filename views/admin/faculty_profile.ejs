@@ -305,9 +305,10 @@
                 <!-- /.card-header -->
                 <div class="card-body">
                   <strong><i class="fas fa-pencil-alt mr-1"></i> DOB</strong>
-                  <% var datemonth=data.dob.getMonth()+1 %>
+                  <%  var dt = new Date(data.dob) %>
+                  <% var datemonth = dt.getMonth() %>    
                     <p class="text-muted">
-                      <%=data.dob.getDate()+"-"+datemonth+"-"+ data.dob.getFullYear()%>
+                      <%=dt.getDate()+"-"+datemonth+"-"+ dt.getFullYear()%>
                     </p>
                     <hr>
 
@@ -402,9 +403,10 @@
                       <div class="form-group row">
                         <label for="date-picker" class="col-sm-2 col-form-label">DOB</label>
                         <div class="col-sm-4">
-                          <!--<%=data.dob.getDate()+'-'+datemonth +'-'+ data.dob.getFullYear() %>-->
+                          <%  var dt = new Date(data.dob) %>
+                              <% var datemonth = dt.getMonth() %>
                           <input type="text" class="form-control" name="dob" id="date-picker" required
-                            value="<%=data.dob.getFullYear() +'-'+ datemonth +'-'+data.dob.getDate()%> ">
+                            value="<%=dt.getFullYear() +'-'+ datemonth +'-'+dt.getDate()%> ">
                         </div>
                       </div>
                       <div class="form-group row">

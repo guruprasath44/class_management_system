@@ -133,7 +133,11 @@ router.get('/admin/subject/delete/:sub_code', (req, res) => {
 });
 /* Student */
 router.get('/student/dashboard', (req, res) => {
-  res.render('student_dashboard', { userData: username });
+  
+  connection.query('select count(*) as count from faculty', (err, faculty_count) => {
+    var users= faculty_count[0].count + 33;
+  res.render('student_dashboard', { userData: username ,f_count: faculty_count[0].count, user : users});    
+  });
 });
 router.get('/admin/students_list', (req, res) => {
   connection.query('select * from student order by rollno ', (err, results) => {
@@ -197,7 +201,7 @@ router.post('/user/login', (req, res) => {
           console.log(results);
           connection.query('select count(*) as count from faculty', (err, faculty_count) => {
             var users= faculty_count[0].count + 33;
-          res.render('student_dashboard', { userData: username ,count: faculty_count[0].count, user : users});         
+          res.render('student_dashboard', { userData: username ,f_count: faculty_count[0].count, user : users});         
           });
         } else {
           setTimeout(() => {
